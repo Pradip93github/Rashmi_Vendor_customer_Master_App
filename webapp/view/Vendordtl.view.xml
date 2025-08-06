@@ -1,0 +1,102 @@
+<mvc:View   xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:core="sap.ui.core"
+            xmlns:f="sap.ui.layout.form"
+ controllerName="com.rg.mm.vd.controller.Vendordtl">
+ <Page title="Vendor details" >  
+   
+   <Table id="idVenTable"   alternateRowColors="true" 
+                growing="true" growingThreshold="20" itemPress="onPressItem">     
+
+     <headerToolbar>
+     <OverflowToolbar >
+      <content>
+      <Label text="Company Code:"/>
+      <MultiComboBox id="idCmcd" width="200px" items="{
+				path: 'vencust>/companyCodeSet'
+			}" >
+      	<core:Item key="{vencust>bukrs}" text="{vencust>bukrs}"/>
+      </MultiComboBox>
+
+      <Label text="BP Role:"></Label>
+      <MultiComboBox id="idBpRole" width="150px" items="{ path: 'vencust>/BPRoleSet',
+                                                          length: 500 }">
+
+                                                 <!-- {path: 'vencust>/BPRoleSet/$count'}  -->
+
+      <core:Item key="{vencust>KTOKD}" text="{vencust>KTOKD}"></core:Item>
+      </MultiComboBox>
+
+      <Label text="Vendor Code:"></Label>
+      <Input id="idVenlow" width="115px" showValueHelp="true">
+      </Input>
+
+      <Label text="To"></Label>
+      <Input id="idVenHigh" width="115px" showValueHelp="true"></Input>
+      
+      <Button id="idProcess"  icon="sap-icon://process" text="GO" press="onGoButton"></Button>
+      </content>
+      </OverflowToolbar >
+      </headerToolbar>
+
+      <infoToolbar>
+			<OverflowToolbar>
+				<Label text="Wide range of available Vendor(s)"/>
+			</OverflowToolbar>
+		  </infoToolbar>
+
+
+      <columns >
+      <Column width="15em" ><ObjectIdentifier title="Code"></ObjectIdentifier></Column>
+      <!-- <Column  minScreenWidth="Desktop"><ObjectIdentifier title="Name" ></ObjectIdentifier></Column> -->
+      <Column ><ObjectIdentifier title="City"></ObjectIdentifier></Column>
+      <Column ><ObjectIdentifier title="District"></ObjectIdentifier></Column>
+      <Column ><ObjectIdentifier title ="Post Code"></ObjectIdentifier></Column>
+      <Column ><ObjectIdentifier title="Region"></ObjectIdentifier></Column>
+      <Column ><ObjectIdentifier title="Street"></ObjectIdentifier></Column>
+      <!-- <Column demandPopin="true" minScreenWidth="Desktop"><ObjectIdentifier title="Address"></ObjectIdentifier></Column>
+      <Column ><ObjectIdentifier title="PhnNo"></ObjectIdentifier></Column>
+      <Column ><ObjectIdentifier title="GSTIn"></ObjectIdentifier></Column>
+      <Column ><ObjectIdentifier title="PAN"></ObjectIdentifier></Column>
+      <Column demandPopin="true" minScreenWidth="Desktop"><ObjectIdentifier title="MSME"></ObjectIdentifier></Column>
+      <Column demandPopin="true" minScreenWidth="Desktop"><ObjectIdentifier title="VAT"></ObjectIdentifier></Column>
+      <Column demandPopin="true" minScreenWidth="Desktop"><ObjectIdentifier title="TIN"></ObjectIdentifier></Column>
+      <Column demandPopin="true" minScreenWidth="Desktop"><ObjectIdentifier title="Aadhar"></ObjectIdentifier></Column>
+      <Column demandPopin="true" minScreenWidth="Desktop"><ObjectIdentifier title="Voter"></ObjectIdentifier></Column> -->
+      </columns>
+
+      <items >
+       <!-- <ColumnListItem > -->
+       <!-- <cells> -->
+        <!-- <ObjectIdentifier title="{vencust>CODE}" text="{vencust>NAME}" ></ObjectIdentifier>   -->
+        <!-- <Text text="{vencust>NAME}"></Text> -->
+         <!-- <Text text="{CITY}"></Text> -->
+         <!-- <Text text="{vencust>DISTRICT}"></Text> -->
+        <!-- <Text text="{vencust>POSTCODE}"></Text>
+        <Text text="{vencust>REGION}"></Text>
+        <Text text="{vencust>STREET}"></Text>  -->
+        <!-- <Text text="{vencust>STREET2}{vencust>STREET3}{vencust>STREET4}{vencust>STREET5}"></Text>
+        <Text text="{vencust>TEL1}"></Text>
+        <Text text="{vencust>TAXNUM3}"></Text>
+        <Text text="{vencust>TAXNUM4}"></Text>
+        <Text text="{vencust>MSME}"></Text>
+        <Text text="{vencust>VAT}"></Text>
+        <Text text="{vencust>TIN}"></Text>
+        <Text text="{vencust>AADHAR}"></Text>
+        <Text text="{vencust>VOTER}"></Text> -->
+       <!-- </cells> -->
+       <!-- </ColumnListItem> -->
+      </items>
+
+
+   
+
+
+
+
+
+   
+   
+   
+   </Table>
+ 
+ </Page>
+</mvc:View>

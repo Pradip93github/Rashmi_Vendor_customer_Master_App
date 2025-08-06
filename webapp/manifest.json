@@ -1,0 +1,134 @@
+{
+    "_version": "1.18.0",
+    "sap.app": {
+        "ach": "MM-REP-VD",
+        "applicationVersion": {"version": "1.0.0"},
+        "id": "com.rg.mm.vd",
+        "i18n": "i18n/i18n.properties",
+        "type": "application",
+        "title": "{{apptitle}}",
+        "description": "{{appdescription}}",
+
+        "dataSources": {
+            "pradipSource":{
+                "type": "OData",
+                "uri": "/sap/opu/odata/sap/ZGET_VEN_DETAILS_SRV/",
+                "settings": { "odataVersion": "2.0" }
+                }
+        }
+
+    },
+
+    "sap.ui": {
+        "deviceTypes":{
+            "desktop": true,
+            "phone": true,
+            "tablet": true
+        },
+        "technology": "UI5",
+        "fullWidth": true,
+        "supportedThemes": ["sap_fiori_3_dark","sap_fiori_3"]
+    },
+
+    "sap.ui5":{
+        "dependencies": {
+            "libs": {
+              "sap.m":{},
+              "sap.ui.core":{},
+              "sap.ui.layout":{}
+            },
+            "minUI5Version":"1.130"
+        },
+        "contentDensities": {"compact": true,"cozy": true},
+        "rootView":{"id": "idRootView","type": "XML","viewName": "com.rg.mm.vd.view.App","async": true},
+
+        "routing": {
+            "config":
+                      {"routerClass": "sap.m.routing.Router","viewPath": "com.rg.mm.vd.view",
+                      "viewType": "XML","controlId": "idAppCon","async": true},
+                      
+            "routes":[
+                {
+                    "name": "startPage",
+                    "pattern": "",
+                    "target":["Mast","Empt"]
+                },{
+                    "name": "vendorDetail",
+                    "pattern": "ven/{index}",
+                    "target":["Mast","Vend"]
+                },{
+                    "name": "CustomerDetail",
+                    "pattern": "cust/{index}",
+                    "target":["Mast","Cust"]
+                },{
+                    "name": "VendorPerDetail",
+                    "pattern": "Vend/{code} ",
+                    "target":["Mast","Vendper"]
+                }
+
+
+            ],
+
+            "targets": {
+                "Mast":{
+                     "viewId": "idMast",
+                     "viewName":"Master",
+                     "controlAggregation":"masterPages"
+                },
+                "Empt":{
+                    "viewId":"idEmpt",
+                    "viewName":"Empty",
+                    "controlAggregation":"detailPages"
+                },
+                "Vend":{
+                    "viewId":"idVndt",
+                    "viewName":"Vendordtl",
+                    "controlAggregation":"detailPages"
+                },
+                "Cust":{
+                    "viewId":"idCust",
+                    "viewName":"Customerdtl",
+                    "controlAggregation":"detailPages"
+                },
+                "Vendper":{
+                    "viewId":"idVendPers",
+                    "viewName":"VendorPers",
+                    "controlAggregation":"detailPages"
+                }
+                
+                
+
+            }
+        },
+
+        "models": {
+            "vencust":{
+                "dataSource": "pradipSource",
+                "type": "sap.ui.model.odata.v2.ODataModel",
+                "settings": {}
+            },
+            "i18n":{
+                "type": "sap.ui.model.resource.ResourceModel",
+                "preload": true,
+                "settings": {
+                    "bundleUrl": "i18n/i18n.properties"
+                }
+            },
+            "":{
+                "type": "sap.ui.model.json.JSONModel",
+                "preload": true,
+                "uri": "model/mockdata.json",
+                "settings": {}
+            }
+        }
+
+
+
+
+       
+
+
+
+    }
+
+}

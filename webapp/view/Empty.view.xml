@@ -1,0 +1,8 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:core="sap.ui.core"
+   controllerName="com.rg.mm.vd.controller.Empty">
+   <Page  title="Vendor and Customer Master Details ">
+   <Image src="https://www.rashmigroup.com/wp-content/uploads/2016/12/Selected-194-1.jpg"
+             height="35em" width="60em"></Image>
+
+</Page>
+</mvc:View>

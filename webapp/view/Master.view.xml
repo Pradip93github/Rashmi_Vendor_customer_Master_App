@@ -1,0 +1,18 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:core="sap.ui.core"
+ controllerName="com.rg.mm.vd.controller.Master">
+ <Page title="Master Page">
+         
+			<!-- <Toolbar>
+				<SearchField placeholder="Search for...." search=".onSearch" />
+			</Toolbar> -->
+     <List items="{/listItems}" itemPress="onItemPress">
+	   <ObjectListItem title="{optn}" type="Navigation">
+	   <ObjectAttribute text="{ }"></ObjectAttribute>
+	   </ObjectListItem>
+	 </List>
+
+
+            
+	</Page>	
+
+</mvc:View>

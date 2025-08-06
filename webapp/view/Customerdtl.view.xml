@@ -1,0 +1,64 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns = "sap.m" xmlns:core="sap.ui.core"
+  controllerName="com.rg.mm.vd.controller.Customerdtl">
+  <Page title="Customer Details">
+  
+   <Table id="idCustTable" >
+
+     <headerToolbar>
+     <OverflowToolbar >
+      <content>
+      <Label text="Company Code:"/>
+      <MultiComboBox id="idCmcdc" width="200px" ></MultiComboBox>
+      <Label text="BP Role:"></Label>
+      <MultiComboBox id="idBpRolec" width="150px" ></MultiComboBox>
+      <Label text="Customer Code:"></Label>
+      <Input id="idVenlowc" width="115px" showValueHelp="true"></Input>
+      <Label text="To"></Label>
+      <Input id="idVenHighc" width="115px" showValueHelp="true"></Input>
+      <Button id="idProcessc"  icon="sap-icon://process" text="GO"></Button>
+      </content>
+      </OverflowToolbar >
+      </headerToolbar>
+
+      <infoToolbar>
+			<OverflowToolbar>
+				<Label text="Wide range of available Customer(s)"/>
+			</OverflowToolbar>
+		  </infoToolbar>
+
+      <columns>
+      
+      <Column ><ObjectIdentifier title="Code"></ObjectIdentifier></Column>
+      <Column ><ObjectIdentifier title="Name"></ObjectIdentifier></Column>
+      <Column ><ObjectIdentifier title="City"></ObjectIdentifier></Column>
+      <Column ><ObjectIdentifier title="District"></ObjectIdentifier></Column>
+      <Column ><ObjectIdentifier title ="PostCode"></ObjectIdentifier></Column>
+      <Column ><ObjectIdentifier title="Region"></ObjectIdentifier></Column>
+      <Column ><ObjectIdentifier title="Street"></ObjectIdentifier></Column>
+      <Column ><ObjectIdentifier title="Address"></ObjectIdentifier></Column>
+      </columns>
+
+      <items>
+       <ColumnListItem  >
+       <cells>
+        <Text text="{}"></Text>
+        <Text text="{}"></Text>
+        <Text text="{}"></Text>
+        <Text text="{}"></Text>
+        <Text text="{}"></Text>
+        <Text text="{}"></Text>
+        <Text text="{}"></Text>
+        <Text text="{}"></Text>
+       </cells>
+       </ColumnListItem>
+      </items>
+
+
+   
+   </Table>
+  
+  
+  
+  
+  </Page>
+  </mvc:View>
