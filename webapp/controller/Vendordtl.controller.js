@@ -93,7 +93,7 @@ sap.ui.define(['com/rg/mm/vd/controller/BaseController',
            },
 
            onPressItem: function(oEvent){
-             debugger;
+             
              var sPath = oEvent.getParameter("listItem").getBindingContextPath();
              var oIndex = sPath.split("/")[sPath.split("/").length - 1];
              this.Orouter.navTo("VendorPerDetail",{

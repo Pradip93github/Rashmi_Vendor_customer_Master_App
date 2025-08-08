@@ -1,4 +1,105 @@
-<mvc:View xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc"
+<mvc:View xmlns:control="sap.gantt.control" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc"
+          xmlns:l="sap.ui.layout"
+	      xmlns:f="sap.ui.layout.form"
     controllerName="com.rg.mm.vd.controller.VendorPers">
-    <Page title="Vendor Personal Details"></Page>
+    <Page >
+    
+    <customHeader>
+    <Toolbar >
+    <Title text="{vencust>CODE}-{path: 'vencust>NAME'}" level="H2"></Title>
+    </Toolbar>
+    </customHeader>
+    <content>
+    <ObjectHeader icon="sap-icon://supplier"  title="{vencust>NAME}"  
+                  number="{vencust>CITY}" numberUnit="{vencust>STREET}"  >	
+    </ObjectHeader>
+
+
+    <IconTabBar id="idTabBar" class="sapUiResponsiveContentPadding">
+    <items>
+    <IconTabFilter icon="sap-icon://suitcase" iconColor="Positive" text="Personal Details" 
+    design="Horizontal">
+    <VBox class="sapUiSmallMargin">
+    <f:SimpleForm  id="idSfrom" layout="ResponsiveLayout" title="Personal Data">
+    <f:content>
+    <Label text="Phone No." design="Bold" textAlign="Left"></Label>
+    <Text text="{vencust>TEL1}"></Text>
+    <!-- <Input id="phn" value="{vencust>TEL1}"></Input> -->
+    <Label text="GSTIN Number" design="Bold" textAlign="Left"></Label>
+    <Text text="{vencust>TAXNUM3}"></Text>
+    <!-- <Input id="txn3" value="{vencust>TAXNUM3}"></Input> -->
+    <Label text="PAN Nunber" design="Bold" textAlign="Left"></Label>
+    <Text text="{vencust>TAXNUM4}"></Text>
+    <!-- <Input id="txn4" value="{vencust>TAXNUM4}"></Input> -->
+    <Label text="MSME" design="Bold" textAlign="Left"></Label>
+    <Text text="{vencust>MSME}"></Text>
+    <!-- <Input id="msme" value="{vencust>MSME}"></Input> -->
+    <Label text="VAT" design="Bold" textAlign="Left"></Label>
+    <Text text="{vencust>VAT}"></Text>
+    <!-- <Input id="VAT" value="{vencust>VAT}"></Input> -->
+    <Label text="TIN" design="Bold" textAlign="Left"></Label>
+    <Text text="{vencust>TIN}"></Text>
+    <!-- <Input id="tin" value="{vencust>TIN}"></Input> -->
+    <Label text="AADHAR" design="Bold" textAlign="Left"></Label>
+    <Text text="{vencust>AADHAR}"></Text>
+    <!-- <Input id="adhr" value="{vencust>AADHAR}"></Input> -->
+    <Label text="VOTER" design="Bold" textAlign="Left"></Label>
+    <Text text="{vencust>VOTER}"></Text>
+    <!-- <Input id="vt" value="{vencust>VOTER}"></Input> -->
+    </f:content>
+    </f:SimpleForm>
+    </VBox>
+    </IconTabFilter>
+    
+    <IconTabSeparator />
+    <IconTabFilter icon="sap-icon://wallet" iconColor="Neutral" text="Bank Details" >
+    <Table id="idBankTab" items="{/venTObank}" > 
+    <!-- items="{vencust>venTOcust}" -->
+    <!-- items="{path : 'vencust>/venbankSet'  , parameters:{expand : 'venTObank'}}" -->
+     <columns>
+     <Column width="12em">
+     <Text text="Vendor"></Text>
+     </Column>
+     <Column width="12em">
+     <Text text="Bank Key"></Text>
+     </Column>
+     <Column width="12em">
+     <Text text="A/C No."></Text>
+     </Column>
+     <Column width="12em">
+     <Text text="IFSC Code"></Text>
+     </Column>
+     <Column width="12em">
+     <Text text="Bank Name"></Text>
+     </Column>
+     </columns>
+
+     <items>
+     <ColumnListItem vAlign="Middle">
+     <cells>
+     <ObjectIdentifier title="{vencust>venTObank/LIFNR}"></ObjectIdentifier>
+     <!-- <Text text="{vencust>BANKL}"></Text> -->
+     <Text text="{venTObank/BANKN}"></Text>
+     <!-- <Text text="{vencust>venTObank/BANKL}"></Text> -->
+     <!-- <Text text="{vencust>venTObank/BKREF}"></Text> -->
+     <!-- <Text text="{vencust>venTObank/BANKA}"></Text> -->
+     </cells>
+     </ColumnListItem>
+     </items>
+    </Table>
+    </IconTabFilter>
+
+    <IconTabSeparator />
+    <IconTabFilter icon="sap-icon://activity-individual" iconColor="Contrast" text="Activity" >
+    </IconTabFilter>
+    </items>
+    </IconTabBar>
+
+
+
+    </content>
+    
+    
+    
+    </Page>
 </mvc:View>
