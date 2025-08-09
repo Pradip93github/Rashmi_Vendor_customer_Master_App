@@ -9,7 +9,7 @@ sap.ui.define(['com/rg/mm/vd/controller/BaseController'],
             },
 
             harculus: function(oEvent){
-                 debugger;
+                
                  var oId = oEvent.getParameter("arguments").code;
                  var sPath = 'vencust>/' + oId;
                  this.getView().bindElement(sPath,{

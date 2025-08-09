@@ -53,36 +53,45 @@
     
     <IconTabSeparator />
     <IconTabFilter icon="sap-icon://wallet" iconColor="Neutral" text="Bank Details" >
-    <Table id="idBankTab" items="{/venTObank}" > 
-    <!-- items="{vencust>venTOcust}" -->
-    <!-- items="{path : 'vencust>/venbankSet'  , parameters:{expand : 'venTObank'}}" -->
-     <columns>
-     <Column width="12em">
-     <Text text="Vendor"></Text>
+    <Table id="idBankTab" items="{vencust>venTObank}"  alternateRowColors="true" growing="true"
+    growingThreshold="20"> 
+     <columns >
+     <Column width="12em"  mergeDuplicates="true">
+     <header>
+     <ObjectIdentifier title="Vendor" /> 
+     </header>
      </Column>
      <Column width="12em">
-     <Text text="Bank Key"></Text>
+     <header>
+     <ObjectIdentifier title="Bank Key"/>
+     </header>
      </Column>
      <Column width="12em">
-     <Text text="A/C No."></Text>
+     <header>
+     <ObjectIdentifier title="A/C No."/>
+     </header>
      </Column>
      <Column width="12em">
-     <Text text="IFSC Code"></Text>
+     <header>
+     <ObjectIdentifier title="IFSC Code"/>
+     </header>
      </Column>
      <Column width="12em">
-     <Text text="Bank Name"></Text>
+     <header>
+     <ObjectIdentifier title="Bank Name" />
+     </header>
      </Column>
      </columns>
 
      <items>
      <ColumnListItem vAlign="Middle">
      <cells>
-     <ObjectIdentifier title="{vencust>venTObank/LIFNR}"></ObjectIdentifier>
+     <ObjectIdentifier title="{vencust>LIFNR}" ></ObjectIdentifier>
+     <Text text="{vencust>BANKL}"></Text>
+     <Text text="{vencust>BANKN}"></Text>
      <!-- <Text text="{vencust>BANKL}"></Text> -->
-     <Text text="{venTObank/BANKN}"></Text>
-     <!-- <Text text="{vencust>venTObank/BANKL}"></Text> -->
-     <!-- <Text text="{vencust>venTObank/BKREF}"></Text> -->
-     <!-- <Text text="{vencust>venTObank/BANKA}"></Text> -->
+     <Text text="{vencust>BKREF}"></Text>
+     <Text text="{vencust>BANKA}"></Text>
      </cells>
      </ColumnListItem>
      </items>

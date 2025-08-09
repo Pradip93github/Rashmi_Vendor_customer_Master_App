@@ -45,7 +45,8 @@
 
 
       <columns >
-      <Column width="15em" ><ObjectIdentifier title="Code"></ObjectIdentifier></Column>
+      <Column width="15em" styleClass="myCustomColumnStyle"><ObjectIdentifier title="Code"></ObjectIdentifier>
+      </Column>
       <!-- <Column  minScreenWidth="Desktop"><ObjectIdentifier title="Name" ></ObjectIdentifier></Column> -->
       <Column ><ObjectIdentifier title="City"></ObjectIdentifier></Column>
       <Column ><ObjectIdentifier title="District"></ObjectIdentifier></Column>
